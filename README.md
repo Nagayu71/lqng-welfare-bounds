@@ -1,13 +1,12 @@
 # Welfare Bounds for Linear-Quadratic Network Games
 
 This repository contains replication materials for the paper **"[Welfare bounds for linear-quadratic network games](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5706124)"**.  
-The purpose of this repository is to provide code and data to reproduce the results presented in the **Table 1** of the paper.
+The purpose of this repository is to provide codes and data to reproduce the results presented in the **Table 1** of the paper.
 
----
 
 ## 🧩 Environment
 
-Below is the output of the environment check script:
+Below is the output of the [environment check script](check_versions.ipynb):
 
 ```
 Package versions:
@@ -41,10 +40,10 @@ flowchart TD
   node_4[("data/FB_spectra.npz<br>data/FB1_spectra.npz<br>data/Jazz_spectra.npz<br>data/Karate_spectra.npz<br>data/NetSci_spectra.npz<br>data/Student_spectra.npz")]
   end
   node_5["welfare_bounds_emp_ER.ipynb"]
-  node_6[["out/network_stats.csv"]]
-  node_7[["out/welfare_bounds.csv"]]
+  node_6(["out/network_stats.csv"])
+  node_7(["out/welfare_bounds.csv"])
   node_8["welfare_bounds_stat_test.ipynb"]
-  node_9[["out/welfare_bounds_CI.csv"]]
+  node_9(["out/welfare_bounds_CI.csv"])
   node_3 --"Generate 10,000 expected degree<br>graphs to compute spectra"--> node_4
   node_2 -.-> node_5
   node_1 --"Compute basic statistics of<br>the largest connected component"--> node_6
@@ -54,5 +53,5 @@ flowchart TD
   node_4 -.-> node_8
   node_8 --"Hypothesis tests"--> node_9
   node_1 --"Extract the largest<br>connected components"--> node_2
-  node_2 -.- node_3
+  node_2 -.-> node_3
 ```
